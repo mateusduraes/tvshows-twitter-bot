@@ -1,2 +1,3 @@
-# :bird: twitter-retweet-bot
-A twitter bot to retweet tweets for a certain list of people
+## :bird: Twitter retweet bot :bird:
+
+A twitter bot to retweet tweets for a certain list of people.
