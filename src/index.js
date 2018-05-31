@@ -1,5 +1,5 @@
-const users = require('./users');
-const Twit = require('twit');
+import { users } from './users';
+import Twit from 'twit';
 
 const T = new Twit({
   consumer_key: '...',
