@@ -1,3 +1,3 @@
 ## :bird: Twitter retweet bot :bird:
 
-A twitter bot to retweet tweets for a certain list of profiles.
+A twitter bot to retweet tweets from important TvShows profiles.
