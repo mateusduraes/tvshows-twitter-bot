@@ -1,4 +1,6 @@
+import Twit from 'twit';
+import { apiKey } from './key';
+
 const T = new Twit(apiKey);
-console.log('T', t);
 
 export { T };
