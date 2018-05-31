@@ -1,11 +1,26 @@
-import { users } from './users';
 import { likeTweet, retweet } from './twitter-functions';
 import { T } from './twitter-app';
 
-const stream = T.stream('status/filter', { follow: users } );
+async function getFriendsIds() {
+  try {
+    const result = await T.get('friends/ids');
+    return result.data.ids;
+  } catch (e) {
+    console.log('error', e);
+  }
+};
 
-stream.on('tweet', (tweet) => {
-  if (!users.includes(tweet.user.id_str)) return;
-  likeTweet(tweet.id);
-  retweet(tweet.id);
-});
+async function init() {
+  const ids = await getFriendsIds();
+  const stream = T.stream('statuses/filter', { follow: ids });
+  stream.on('tweet', (tweet) => {
+    console.log('tweet received');
+    if (!ids.includes(tweet.user.id)) return;
+    console.log('Friend:', tweet.user.name);
+    console.log('Tweet: ', tweet.text);
+    likeTweet(tweet.id_str);
+    retweet(tweet.id_str);
+  });
+}
+
+init();

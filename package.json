@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mateusduraes/twitter-retweet-bot#readme",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "twit": "^2.2.9"
   },
   "devDependencies": {

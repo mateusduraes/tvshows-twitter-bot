@@ -6,7 +6,7 @@ const apiCallback = (err, data, res) => {
   }
 }
 
-const likeTweet = id => T.post('favorites/create/:id', { id }, apiCallback);
+const likeTweet = id => T.post('favorites/create', { id }, apiCallback);
 const retweet = id => T.post('statuses/retweet/:id', { id }, apiCallback);
 
 export { likeTweet, retweet };
