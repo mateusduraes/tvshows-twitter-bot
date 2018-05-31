@@ -9,4 +9,11 @@ const apiCallback = (err, data, res) => {
 const likeTweet = id => T.post('favorites/create', { id }, apiCallback);
 const retweet = id => T.post('statuses/retweet/:id', { id }, apiCallback);
 
-export { likeTweet, retweet };
+const getFriendsIds = async () => {
+  const result = await T.get('friends/ids');
+  return result.data.ids;
+};
+
+
+
+export { likeTweet, retweet, getFriendsIds };
