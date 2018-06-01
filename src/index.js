@@ -6,8 +6,8 @@ async function init() {
   const stream = T.stream('statuses/filter', { follow: ids });
   stream.on('tweet', (tweet) => {
     if (!ids.includes(tweet.user.id)) return;
-    likeTweet(tweet.id_str);
-    retweet(tweet.id_str);
+    twitter.likeTweet(tweet.id_str);
+    twitter.retweet(tweet.id_str);
   });
 }
 
